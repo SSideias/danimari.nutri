@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultoria Nutricional</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f6f4ef;
+      color: #2e4d3c;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .hero-img img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 30px;
+      background: #3f6b52;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2e4d3c;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #dfe8dc;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-text">
+    <h1>Você não está atrasada.<br>Você está se comparando.</h1>
+    <p>Transforme sua alimentação com estratégia, sem radicalismo.</p>
+    <a class="btn" href="https://api.whatsapp.com/send/?phone=5561992722568&text=Oii%21+Quero+agendar+uma+consulta+%EF%BF%BD&type=phone_number&app_absent=0" target="_blank">Agendar Consulta</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="/mnt/data/7955a355-3296-4863-944b-65a6733e8df0.png" alt="Nutricionista">
+  </div>
+</header>
+
+<section>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Fome rápida?</h3>
+      <p>Pode ser falta de fibra.</p>
+    </div>
+
+    <div class="card">
+      <h3>Excesso de proteína?</h3>
+      <p>Não garante hipertrofia sozinho.</p>
+    </div>
+
+    <div class="card">
+      <h3>Carboidrato engorda?</h3>
+      <p>Depende do contexto da sua rotina.</p>
+    </div>
+
+    <div class="card">
+      <h3>Ordem dos alimentos</h3>
+      <p>Faz diferença sim.</p>
+    </div>
+
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <h2>Plano alimentar personalizado + acompanhamento</h2>
+  <p>Resultados reais, com estratégia feita pra você.</p>
+  <a class="btn" href="https://api.whatsapp.com/send/?phone=5561992722568&text=Oii%21+Quero+agendar+uma+consulta+%EF%BF%BD&type=phone_number&app_absent=0" target="_blank">Quero começar agora</a>
+</section>
+
+<footer>
+  <p>Consultoria Nutricional • Simples, eficiente e real</p>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+      const top = card.getBoundingClientRect().top;
+      if (top < window.innerHeight - 50) {
+        card.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
