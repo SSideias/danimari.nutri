@@ -155,22 +155,22 @@ footer {
   top: 50%;
   transform: translateY(-50%);
 
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 
   background: #E1306C;
   border-radius: 50%;
 
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 
   z-index: 9999;
 }
 
-/* 👇 CONTROLE TOTAL DO TAMANHO */
-.insta-icon {
-  font-size: 12px;
-  color: white;
-  font-weight: bold;
+/* 👇 CONTROLE DO ÍCONE */
+.insta-svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
 }
