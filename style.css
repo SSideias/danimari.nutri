@@ -10,6 +10,12 @@ body {
   overflow-x: hidden;
 }
 
+/* IMAGENS (CORREÇÃO DO BUG) */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* HERO */
 header {
   display: flex;
@@ -30,22 +36,34 @@ header {
   margin-bottom: 15px;
 }
 
-.profile-info h2 {
-  letter-spacing: 2px;
+.hero-text p {
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 
-.profile-info p {
-  font-family: 'Pinyon Script', cursive;
-  font-size: 1.3rem;
-  opacity: 0.7;
-
+/* IMAGEM */
+.hero-img {
+  text-align: center;
 }
 
 .hero-img img {
   width: 300px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  animation: fadeIn 1.2s ease forwards;
+}
+
+/* NOME */
+.profile-info h2 {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  margin: 10px 0 5px;
+}
+
+.profile-info p {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1.2rem;
+  opacity: 0.7;
 }
 
 /* BOTÃO */
@@ -119,31 +137,26 @@ footer {
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2rem;
   }
 
- img {
-  max-width: 100%;
-}
+  .hero-img img {
+    width: 250px;
+  }
 }
 
-/* 👇 BOTÃO INSTAGRAM (COLE AQUI EMBAIXO) */
+/* 🔥 BOTÃO INSTAGRAM (AGORA 100% FUNCIONANDO) */
 .insta-float {
-  position: fixed !important;
-  right: 15px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 
-  width: 45px !important;
-  height: 45px !important;
+  width: 45px;
+  height: 45px;
 
   background: #E1306C;
   border-radius: 50%;
@@ -152,16 +165,14 @@ footer {
   align-items: center;
   justify-content: center;
 
-  z-index: 999999;
+  z-index: 9999;
 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   overflow: hidden;
 }
 
-/* 👇 ISSO AQUI É O QUE VAI RESOLVER */
 .insta-float img {
-  width: 22px !important;
-  height: 22px !important;
-  max-width: 22px !important;
-  max-height: 22px !important;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
 }
