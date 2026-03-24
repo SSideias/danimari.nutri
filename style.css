@@ -137,11 +137,12 @@ footer {
 
 .insta-float {
   position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 45px;
 
   display: flex;
   align-items: center;
@@ -149,26 +150,18 @@ footer {
 
   background: #E1306C;
   border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 999;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 
   transition: 0.3s;
 }
 
 .insta-float img {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
 }
 
 .insta-float:hover {
-  transform: scale(1.1);
-  background: #c72b61;
-}
-.insta-float {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  transform: translateY(-50%) scale(1.1);
 }
