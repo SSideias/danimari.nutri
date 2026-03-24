@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultoria Nutricional</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pinyon+Script&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; }
@@ -15,7 +15,6 @@
       font-family: 'Poppins', sans-serif;
       background: #f6f4ef;
       color: #2e4d3c;
-      overflow-x: hidden;
     }
 
     header {
@@ -29,7 +28,6 @@
 
     .hero-text {
       max-width: 500px;
-      animation: fadeUp 1s ease forwards;
     }
 
     .hero-text h1 {
@@ -42,11 +40,26 @@
       opacity: 0.8;
     }
 
+    .hero-img {
+      text-align: center;
+    }
+
     .hero-img img {
       width: 300px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .profile-info h2 {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      margin: 10px 0 5px;
+    }
+
+    .profile-info p {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 1.2rem;
+      opacity: 0.7;
     }
 
     .btn {
@@ -57,13 +70,6 @@
       color: white;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #2e4d3c;
-      transform: translateY(-2px);
     }
 
     section {
@@ -83,18 +89,6 @@
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: 0.3s;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     footer {
@@ -103,41 +97,76 @@
       background: #dfe8dc;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* 🔥 BOTÃO INSTAGRAM (SEM BUG) */
+    .insta-float {
+      position: fixed;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 42px;
+      height: 42px;
+
+      background: #E1306C;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      z-index: 9999;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .insta-icon {
+      width: 18px;
+      height: 18px;
+      position: relative;
+    }
+
+    .insta-icon::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid #fff;
+      border-radius: 4px;
+    }
+
+    .insta-icon::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="hero-text">
     <h1>Você não está atrasada.<br>Você está se comparando.</h1>
     <p>Transforme sua alimentação com estratégia, sem radicalismo.</p>
-    <a class="btn" href="https://api.whatsapp.com/send/?phone=5561992722568&text=Oii%21+Quero+agendar+uma+consulta+%EF%BF%BD&type=phone_number&app_absent=0" target="_blank">Agendar Consulta</a>
+    <a class="btn" href="https://api.whatsapp.com/send/?phone=5561992722568" target="_blank">Agendar Consulta</a>
   </div>
 
   <div class="hero-img">
-  <img src="images/danimari.png" alt="danimari">
+    <img src="images/danimari.png" alt="Nutricionista">
 
-  <div class="profile-info">
-    <h2>Danielly Marinho</h2>
-    <p>Nutricionista</p>
+    <div class="profile-info">
+      <h2>Danielly Marinho</h2>
+      <p>Nutricionista</p>
+    </div>
   </div>
-
-</div>
 </header>
 
 <section>
   <div class="grid">
-
     <div class="card">
       <h3>Fome rápida?</h3>
       <p>Pode ser falta de fibra.</p>
@@ -157,36 +186,23 @@
       <h3>Ordem dos alimentos</h3>
       <p>Faz diferença sim.</p>
     </div>
-
   </div>
 </section>
 
 <section style="text-align:center;">
-  <h2>Plano alimentar personalizado + acompanhamento</h2>
+  <h2>Plano alimentar personalizado</h2>
   <p>Resultados reais, com estratégia feita pra você.</p>
-  <a class="btn" href="https://api.whatsapp.com/send/?phone=5561992722568&text=Oii%21+Quero+agendar+uma+consulta+%EF%BF%BD&type=phone_number&app_absent=0" target="_blank">Quero começar agora</a>
+  <a class="btn" href="https://api.whatsapp.com/send/?phone=5561992722568" target="_blank">Quero começar</a>
 </section>
 
 <footer>
   <p>Consultoria Nutricional • Simples, eficiente e real</p>
 </footer>
 
-<script>
-  const cards = document.querySelectorAll('.card');
-
-  window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-      const top = card.getBoundingClientRect().top;
-      if (top < window.innerHeight - 50) {
-        card.classList.add('show');
-      }
-    });
-  });
-</script>
-<!-- BOTÃO INSTAGRAM -->
+<!-- 🔥 BOTÃO INSTAGRAM -->
 <a href="https://instagram.com/danimari.nutri" target="_blank" class="insta-float">
   <span class="insta-icon"></span>
 </a>
-  
+
 </body>
 </html>
